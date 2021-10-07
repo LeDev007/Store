@@ -36,7 +36,7 @@ namespace Levis.Controllers
                 cart.Article_name = article.Name;
                 cart.Article_price = article.price;
                 cart.Article_Qty = 1;
-                cart.Article_imagePath = article.imagePath;
+                cart.Article_imagePath = article.ImagePath;
 
                 db.Cart1Set.Add(cart);
                 db.SaveChanges();
