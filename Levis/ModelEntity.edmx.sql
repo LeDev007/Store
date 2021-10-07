@@ -103,6 +103,15 @@ ADD CONSTRAINT [PK_Order]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+INSERT INTO Article
+(Id, Name, description , price , ImagePath)
+VALUES
+(10, 'Nike', 'Description de Nike' , 124 , 'https://cdn.shopify.com/s/files/1/0646/1285/products/Capri-Castagna-Lowtop-Men-Koio-1_1200x.progressive.png.jpg),
+(14, 'Adidas', 'Description de Adidas' , 150 , 'https://assets.adidas.com/images/w_600,f_auto,q_auto/65a66d7d1b6544fd85e7a998000b49cb_9366/Runfalcon_Shoes_Black_F36218.jpg'),
+(17, 'Philipp plein', 'Description de Philipp' , 900 , 'https://i.pinimg.com/236x/bc/38/3f/bc383f4284a624f6bd815a1093b0fa15.jpg'),
+(16, 'Lacost', 'Description de Lacost' , 250 , 'https://i.pinimg.com/236x/bc/38/3f/bc383f4284a624f6bd815a1093b0fa15.jpg'),
+(10, 'Jordans', 'Description de Jordans' , 300 , 'https://i.pinimg.com/236x/bc/38/3f/bc383f4284a624f6bd815a1093b0fa15.jpg'),
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
