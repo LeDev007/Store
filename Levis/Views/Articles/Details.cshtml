@@ -1,0 +1,56 @@
+﻿@model Levis.Article
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ArticleSet</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.ImagePath)" width="450" height="450" />
+        </div>
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.price)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.price)
+                </dd>
+
+
+
+            </dl>
+        </div>
+    </div>
+</div>
+<p>
+    @using (Html.BeginForm("AddCart", "Articles", new { @ArticleId = @Html.DisplayFor(model => model.Id) }, FormMethod.Post))
+    {
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-success float-right">
+        <i class="fas fa-shopping-cart"></i> Add to Cart
+    </button> }
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

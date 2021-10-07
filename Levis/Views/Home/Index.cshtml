@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <link href="~/Content/CustomStyle.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    <style>
+        body {
+            background-image: url('../../Content/img/back2.jfif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item item-1">
+                <div class="img-fill">
+                    <div class="text-content">
+                        <h6>We're available everyday all day</h6>
+                        <h4>  <br>Enjoy your shopping</h4>
+                        <p>
+                            At E-Shop, we get involved and invest in sustainability,
+                            because for us it only has advantages: it's good for our business,
+                            the planet, our customers and our communities.
+                        </p>
+                        @Html.ActionLink("Shop now", "Index", "Articles", new { @class = "filled-button" })
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+        </div>
+    </div>
+</body>

@@ -1,0 +1,72 @@
+﻿@model Levis.Cart1
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cart1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_Qty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_Qty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Article_imagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Article_imagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

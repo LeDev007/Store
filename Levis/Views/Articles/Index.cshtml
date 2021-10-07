@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Levis.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<hr />
+<div class='container-fluid d-flex justify-content-center'>
+    <div class="card-group">
+        @foreach (var item in Model)
+        {
+            <div class="card col-sm-3 mb-5" style="margin-bottom:20px; margin-right:10px">
+                <img class='mx-auto img-thumbnail' src="@Url.Content(item.ImagePath)" width="auto" height="auto" />
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    </div>
+                </div>
+                <p class="card-text">$ @Html.DisplayFor(modelItem => item.price)</p>
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "d-flex justify-content-between btn btn-sm details px-auto" })
+
+                @Html.ActionLink("Cart", "CartSets/Details", new { id = item.Id }, new { @class = "d-flex justify-content-between btn btn-sm cart px-auto" })
+
+                <script type="text/javascript">
+                $(function(){
+                  $("#btnRedirect").click(function(){
+                    window.location.href = "@Url.Action("Create", "CartSet")";
+                  });
+                });
+                </script>
+
+            </div>
+        }
+        <div class="card col-sm-3 mb-5" style="margin-bottom:20px; margin-right:10px">
+            <img class='mx-auto img-thumbnail' src="https://images.ctfassets.net/od02wyo8cgm5/3EfoQCOVEYhdsiLUv3t2O9/23b02d79f25e28186b6704d9eabb5aca/cloud_x-fw20-white_black-m-g1.png?w=600&h=600&fl=progressive&q=61&bg=rgb:f7f7f7&fm=jpg" width="auto" height="auto" />
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold">Nike</h5>
+                </div>
+            </div>
+            <p class="card-text">$ 190.99</p>
+            @Html.ActionLink("Details", "#", new { @class = "d-flex justify-content-between btn btn-sm details px-auto" })
+            @Html.ActionLink("Cart", "#", new { @class = "d-flex justify-content-between btn btn-sm cart px-auto" })
+
+            <script type="text/javascript">
+                $(function(){
+                  $("#btnRedirect").click(function(){
+                    window.location.href = "@Url.Action("Create", "CartSet")";
+                  });
+                });
+            </script>
+
+        </div>
+        <div class="card col-sm-3 mb-5" style="margin-bottom:20px; margin-right:10px">
+            <img class='mx-auto img-thumbnail' src="https://images.ctfassets.net/od02wyo8cgm5/4lBog4xanPAmtfuJLNOAE9/c776f8a7cdd083dc0f0f146acf1a744a/swiss_olympic_cloudflow-fw21-rust_eclipse-m-g6.png?w=600&h=600&fl=progressive&q=61&bg=rgb:f7f7f7&fm=jpg" width="auto" height="auto" />
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold">Adidas</h5>
+                </div>
+            </div>
+            <p class="card-text">$ 190.99</p>
+            @Html.ActionLink("Details", "#", new { @class = "d-flex justify-content-between btn btn-sm details px-auto" })
+            @Html.ActionLink("Cart", "#", new { @class = "d-flex justify-content-between btn btn-sm cart px-auto" })
+
+            <script type="text/javascript">
+                $(function(){
+                  $("#btnRedirect").click(function(){
+                    window.location.href = "@Url.Action("Create", "CartSet")";
+                  });
+                });
+            </script>
+
+        </div>
+        <div class="card col-sm-3 mb-5" style="margin-bottom:20px; margin-right:10px">
+            <img class='mx-auto img-thumbnail' src="https://images.ctfassets.net/od02wyo8cgm5/3EfoQCOVEYhdsiLUv3t2O9/23b02d79f25e28186b6704d9eabb5aca/cloud_x-fw20-white_black-m-g1.png?w=600&h=600&fl=progressive&q=61&bg=rgb:f7f7f7&fm=jpg" width="auto" height="auto" />
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold">Nike</h5>
+                </div>
+            </div>
+            <p class="card-text">$ 190.99</p>
+            @Html.ActionLink("Details", "#", new { @class = "d-flex justify-content-between btn btn-sm details px-auto" })
+            @Html.ActionLink("Cart", "#", new { @class = "d-flex justify-content-between btn btn-sm cart px-auto" })
+
+            <script type="text/javascript">
+                $(function(){
+                  $("#btnRedirect").click(function(){
+                    window.location.href = "@Url.Action("Create", "CartSet")";
+                  });
+                });
+            </script>
+
+        </div>
+        <div class="card col-sm-3 mb-5" style="margin-bottom:20px; margin-right:10px">
+            <img class='mx-auto img-thumbnail' src="https://images.ctfassets.net/od02wyo8cgm5/4lBog4xanPAmtfuJLNOAE9/c776f8a7cdd083dc0f0f146acf1a744a/swiss_olympic_cloudflow-fw21-rust_eclipse-m-g6.png?w=600&h=600&fl=progressive&q=61&bg=rgb:f7f7f7&fm=jpg" width="auto" height="auto" />
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold">Adidas</h5>
+                </div>
+            </div>
+            <p class="card-text">$ 190.99</p>
+            @Html.ActionLink("Details", "#", new { @class = "d-flex justify-content-between btn btn-sm details px-auto" })
+            @Html.ActionLink("Cart", "#", new { @class = "d-flex justify-content-between btn btn-sm cart px-auto" })
+
+            <script type="text/javascript">
+                $(function(){
+                  $("#btnRedirect").click(function(){
+                    window.location.href = "@Url.Action("Create", "CartSet")";
+                  });
+                });
+            </script>
+
+        </div>
+
+    </div>
+</div>
+
+

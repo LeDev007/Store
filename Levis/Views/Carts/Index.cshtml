@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Levis.Cart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qua</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item. )" alt="@Html.DisplayFor(modelItem => item.product_name)" class="img-circle img-size-32 mr-2" style="border-radius:5px; width:10%;">
+                    @Html.DisplayFor(modelItem => item.product_name)
+                </td>
+
+                <td>$ @Html.DisplayFor(modelItem => item.product_price) USD</td>
+                <td>
+
+                <td>@Html.DisplayFor(modelItem => item.product_qua)</td>
+                <td>
+
+                <td>
+                    <a href="/iProducts/Details/@Html.DisplayFor(modelItem => item.product_id)"><button class="btn btn-primary btn-xs">View Product</button></a>
+                </td>
+
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+}
+    </tbody>
+
+
+
+</table>
