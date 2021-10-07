@@ -37,20 +37,18 @@
                 <dd>
                     @Html.DisplayFor(model => model.price)
                 </dd>
-
-
-
             </dl>
+            @using (Html.BeginForm("AddCart", "Articles", new { @ArticleId = @Html.DisplayFor(model => model.Id) }, FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-sm cart px-auto"><i class="fas fa-shopping-cart"></i> 
+                Add to Cart
+            </button> }
         </div>
     </div>
 </div>
 <p>
-    @using (Html.BeginForm("AddCart", "Articles", new { @ArticleId = @Html.DisplayFor(model => model.Id) }, FormMethod.Post))
-    {
-    @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-success float-right">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-    </button> }
+
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
