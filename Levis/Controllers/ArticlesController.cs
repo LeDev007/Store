@@ -22,23 +22,23 @@ namespace Levis.Controllers
             return View(db.Article.ToList());
         }
 
-        public ActionResult AddBasket(int productId)
+        public ActionResult AddCart(int ArticleId)
         {
-            var eprod = db.Article.Find(productId);
+            var article = db.Article.Find(ArticleId);
 
-            if (eprod != null)
+            if (article != null)
             {
-                Cart1 basket = new Cart1();
+                Cart1 cart = new Cart1();
 
 
-                basket.Article_id = productId;
-                basket.User_Id = User.Identity.GetUserId();
-                basket.Article_name = eprod.Name;
-                basket.Article_price = eprod.price;
-                basket.Article_Qty = 1;
-                basket.Article_imagePath = eprod.ImagePath;
+                cart.Article_id = Article.Id;
+                cart.User_Id = User.Identity.GetUserId();
+                cart.Article_name = article.Name;
+                cart.Article_price = article.price;
+                cart.Article_Qty = 1;
+                cart.Article_imagePath = article.imagePath;
 
-                db.Cart1Set.Add(basket);
+                db.Cart1Set.Add(cart);
                 db.SaveChanges();
             }
 
